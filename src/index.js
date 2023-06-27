@@ -4,10 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let messages = [
+  {id: 1, name: 'Me', text: 'Hi'},
+  {id: 2, name: 'Me', text: 'How are you?'},
+  {id: 3, name: 'Anastasia', text: 'Hi, good! And you?'}
+]
+let reviews = [
+  {id: 1, text: 'Hello world!'},
+  {id: 2, text: 'My first review!'}
+]
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App messages={messages} reviews={reviews}/>
   </React.StrictMode>
 );
 

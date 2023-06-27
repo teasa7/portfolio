@@ -1,0 +1,13 @@
+.message {
+  background-color: #e6e6e6;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.name {
+  font-weight: bold;
+  margin: 0;
+}
+.text {
+  margin: 0;
+}
