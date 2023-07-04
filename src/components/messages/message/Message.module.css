@@ -3,6 +3,10 @@
   padding: 10px 20px;
   border-radius: 10px;
   margin: 10px;
+  width: 50%;
+}
+.message_me {
+  margin-left: auto;
 }
 .name {
   font-weight: bold;

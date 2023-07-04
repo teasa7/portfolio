@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./Profile.module.css";
 import user from "./user.jpg";
 import bg from "./bg.jpg";
-import Reviews from "./reviews/Reviews";
 import { NavLink } from "react-router-dom";
+import ReviewsContainer from "./reviews/ReviewsContainer";
 
 const Profile = (props) => {
   return (
@@ -21,7 +21,7 @@ const Profile = (props) => {
               </div> 
             </div>
           </div>
-          <Reviews reviews={props.reviews} />
+          <ReviewsContainer store={props.store} />
       </div>
   )
 }
