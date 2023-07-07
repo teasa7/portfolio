@@ -1,35 +1,38 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE'
+const SET_MESSAGE = 'SET-MESSAGE'
+const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT'
 
 let initialState = {
-  messages: [
-    {id: 1, name: 'Me', text: 'Hi'},
-    {id: 2, name: 'Me', text: 'How are you?'},
-    {id: 3, name: 'Anastasia', text: 'Hi, good! And you?'}
-  ],
+  messages: [],
   newMessageText: ''
 }
 
 const messageReducer = (state = initialState, action) => {
   switch(action.type) {
-    case SEND_MESSAGE:
-      let newMessage = {
-        id: 4,
-        name: 'Me',
-        text: state.newMessageText,
+    case SEND_MESSAGE: 
+      return {
+        ...state,
+        newMessageText: '',
+        messages: [...state.messages, {id: 4, name: 'Me', text: state.newMessageText}]
       }
-      state.messages.push(newMessage);
-      state.newMessageText = '';
-      return state;
     case UPDATE_MESSAGE_TEXT:
-      state.newMessageText = action.newText;
-      return state;
+      return {
+        ...state,
+        newMessageText: action.newText
+      } 
+    case SET_MESSAGE: {
+        return {
+          ...state,
+          messages: [...state.messages, ...action.messages]
+        }
+      }
     default:
-      return state;
+      return state
   }
 }
 
-export let sendMessageCreator = () => ({ type: SEND_MESSAGE });
-export let changeMessageCreator = (newText) => ({ type:    UPDATE_MESSAGE_TEXT, newText: newText});
+export let sendMessageCreator = () => ({ type: SEND_MESSAGE })
+export let setMessageCreator = (messages) => ({ type: SET_MESSAGE, messages })
+export let changeMessageCreator = (newText) => ({ type:    UPDATE_MESSAGE_TEXT, newText: newText})
 
-export default messageReducer;
+export default messageReducer

@@ -9,19 +9,21 @@ let initialState = {
   newReviewText: ''
 }
 
-const profileReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => { 
   switch(action.type) {
-    case ADD_REVIEW:
-      let newReview = {
-        id: 3,
-        text: state.newReviewText
+    case ADD_REVIEW: {
+      return {
+        ...state,
+        newReviewText: '',
+        reviews: [...state.reviews, {id: 3, text: state.newReviewText}]
       }
-      state.reviews.push(newReview);
-      state.newReviewText = '';
-      return state;
-    case UPDATE_REVIEW_TEXT:
-      state.newReviewText = action.newText;
-      return state;
+    }
+    case UPDATE_REVIEW_TEXT: {
+      return {
+        ...state,
+        newReviewText: action.newText
+      }
+    }    
     default:
       return state;
   }

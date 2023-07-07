@@ -1,22 +1,44 @@
 import React from "react";
 import Reviews from "./Reviews";
 import { addReviewCreator, changeReviewCreator } from "./../../../redux/profileReducer"
+import { connect } from 'react-redux';
 
+// const ReviewsContainer = () => {
+//   return (
+//     <StoreContext.Consumer> 
+//       { store => {
+//           let addReview = () => {
+//             store.dispatch(addReviewCreator());
+//           }
 
-const ReviewsContainer = (props) => {
-  let state = props.store.getState();
+//           let changeReview = (text) => {
+//             store.dispatch(changeReviewCreator(text));
+//           }  
 
-  let addReview = () => {
-    props.store.dispatch(addReviewCreator());
+//           <Reviews reviews={store.getState().profilePage.reviews} newReviewText={store.getState().profilePage.newReviewText} changeReview={changeReview} addReview={addReview} />
+//         }
+//       }
+//     </StoreContext.Consumer>
+//   )
+// }
+
+let mapStateToProps = (state) => {
+  return {
+    reviews: state.profilePage.reviews,
+    newReviewText: state.profilePage.newReviewText
   }
-
-  let changeReview = (text) => {
-    props.store.dispatch(changeReviewCreator(text));
-  }  
-
-  return (
-    <Reviews reviews={state.profilePage.reviews} newReviewText={state.profilePage.newReviewText} changeReview={changeReview} addReview={addReview} />
-  )
 }
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addReview: () => {
+      dispatch(addReviewCreator());
+    },
+    changeReview: (text) => {
+      dispatch(changeReviewCreator(text));
+    }
+  }
+}
+
+const ReviewsContainer = connect(mapStateToProps, mapDispatchToProps)(Reviews);
 
 export default ReviewsContainer;

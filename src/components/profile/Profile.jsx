@@ -21,7 +21,7 @@ const Profile = (props) => {
               </div> 
             </div>
           </div>
-          <ReviewsContainer store={props.store} />
+          <ReviewsContainer />
       </div>
   )
 }

@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className={styles.nav}>
       <NavLink to="/profile">Profile</NavLink>
       <NavLink to="/messages">Messages</NavLink>
-      <NavLink to="#">News</NavLink>
+      <NavLink to="/projects">Projects</NavLink>
       <NavLink to="#">Music</NavLink>
       <NavLink to="#">Settings</NavLink>
     </nav>
