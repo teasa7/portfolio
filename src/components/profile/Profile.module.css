@@ -1,5 +1,5 @@
 .profile {
-  height: 350px;
+  min-height: 350px;
 }
 .user {
   display: flex;

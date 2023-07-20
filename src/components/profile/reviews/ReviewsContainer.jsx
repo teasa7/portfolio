@@ -1,6 +1,6 @@
 import React from "react";
 import Reviews from "./Reviews";
-import { addReviewCreator, changeReviewCreator } from "./../../../redux/profileReducer"
+import { addReview, changeReview } from "./../../../redux/profileReducer"
 import { connect } from 'react-redux';
 
 // const ReviewsContainer = () => {
@@ -28,17 +28,17 @@ let mapStateToProps = (state) => {
     newReviewText: state.profilePage.newReviewText
   }
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    addReview: () => {
-      dispatch(addReviewCreator());
-    },
-    changeReview: (text) => {
-      dispatch(changeReviewCreator(text));
-    }
-  }
-}
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     addReview: () => {
+//       dispatch(addReviewCreator());
+//     },
+//     changeReview: (text) => {
+//       dispatch(changeReviewCreator(text));
+//     }
+//   }
+// }
 
-const ReviewsContainer = connect(mapStateToProps, mapDispatchToProps)(Reviews);
+const ReviewsContainer = connect(mapStateToProps, {addReview, changeReview})(Reviews);
 
 export default ReviewsContainer;

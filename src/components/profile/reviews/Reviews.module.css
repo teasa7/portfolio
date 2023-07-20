@@ -1,0 +1,30 @@
+.block_input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.input {
+  outline:none;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  height: 34px;
+  width: 100%;
+  resize: none;
+}
+.input:hover, .input:active {
+  border: 1px solid gray;
+}
+.button {
+  min-width: 120px;
+  height: 40px;
+  background-color: rgb(7, 85, 68);
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.button:hover, .button:active {
+  background-color: rgb(5, 78, 62);
+}

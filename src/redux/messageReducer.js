@@ -3,7 +3,11 @@ const SET_MESSAGE = 'SET-MESSAGE'
 const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT'
 
 let initialState = {
-  messages: [],
+  messages: [
+    {id: 1, name: 'Me', text: 'Hi'},
+    {id: 2, name: 'Me', text: 'How are you?'},
+    {id: 3, name: 'Anastasia', text: 'Hi, good! And you?'}
+  ],
   newMessageText: ''
 }
 
@@ -31,8 +35,8 @@ const messageReducer = (state = initialState, action) => {
   }
 }
 
-export let sendMessageCreator = () => ({ type: SEND_MESSAGE })
-export let setMessageCreator = (messages) => ({ type: SET_MESSAGE, messages })
-export let changeMessageCreator = (newText) => ({ type:    UPDATE_MESSAGE_TEXT, newText: newText})
+export let sendMessage = () => ({ type: SEND_MESSAGE })
+export let setMessage = (messages) => ({ type: SET_MESSAGE, messages })
+export let changeMessage = (newText) => ({ type:    UPDATE_MESSAGE_TEXT, newText: newText})
 
 export default messageReducer

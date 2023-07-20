@@ -19,9 +19,9 @@ const Reviews = (props) => {
   return (
     <div>
       <h2>Reviews</h2>
-      <div>
-        <textarea ref={newReviewElement} value={props.newReviewText} onChange={onChangeReview} />
-        <button onClick={onAddReview}>Add review</button>
+      <div className={styles.block_input}>
+        <textarea ref={newReviewElement} value={props.newReviewText} onChange={onChangeReview} className={styles.input} />
+        <button onClick={onAddReview} className={styles.button}>Add review</button>
       </div>
       <div className={styles.reviews}>
         {reviewsElements}

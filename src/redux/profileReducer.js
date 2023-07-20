@@ -29,7 +29,7 @@ const profileReducer = (state = initialState, action) => {
   }
 }
 
-export let addReviewCreator = () => ({ type: ADD_REVIEW });
-export let changeReviewCreator = (newText) => ({ type:    UPDATE_REVIEW_TEXT, newText: newText});
+export let addReview = () => ({ type: ADD_REVIEW });
+export let changeReview = (newText) => ({ type:    UPDATE_REVIEW_TEXT, newText: newText});
 
 export default profileReducer;

@@ -1,13 +1,15 @@
+import Camper from './../assets/images/Camper.png'
+import Hotel from './../assets/images/Hotel.png'
+
 const ADD_PROJECT = 'ADD-PROJECT'
 const DELETE_PROJECT = 'DELETE-PROJECT'
 const UPDATE_PROJECT_TEXT = 'UPDATE-PROJECT-TEXT'
 const SET_PROJECT = 'SET-PROJECT'
 
-
 let initialState = {
   projects: [
-    {id: 1, title: 'Camper', description: 'Tourist guide', url: 'https://github.com/teasa7/camper', photo: './Camper.png'},
-    {id: 2, title: 'Hotel', description: 'Hotel website', url: 'https://github.com/teasa7/hotel', photo: './Hotel.png'}   
+    {id: 1, title: 'Camper', description: 'Tourist guide', url: 'https://github.com/teasa7/camper', photo: Camper},
+    {id: 2, title: 'Hotel', description: 'Hotel website', url: 'https://github.com/teasa7/hotel', photo: Hotel}   
   ],
   newProjectTitle: '',
   newProjectDescription: '',
@@ -54,9 +56,9 @@ const projectReducer = (state = initialState, action) => {
   }
 }
 
-export const addProjectCreator = () => ({ type: ADD_PROJECT })
-export const deleteProjectCreator = (projectID) => ({ type: DELETE_PROJECT, projectID })
-export const setProjectCreator = (projects) => ({ type: SET_PROJECT, projects })
-export const changeProjectCreator = (newTitle, newDescription, newUrl, newPhoto) => ({ type: UPDATE_PROJECT_TEXT, newTitle, newDescription, newUrl, newPhoto })
+export const addProject = () => ({ type: ADD_PROJECT })
+export const deleteProject = (projectID) => ({ type: DELETE_PROJECT, projectID })
+export const setProject = (projects) => ({ type: SET_PROJECT, projects })
+export const changeProject = (newTitle, newDescription, newUrl, newPhoto) => ({ type: UPDATE_PROJECT_TEXT, newTitle, newDescription, newUrl, newPhoto })
 
 export default projectReducer;

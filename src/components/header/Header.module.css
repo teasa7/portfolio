@@ -7,9 +7,19 @@
   width: 70%;
   height: 30px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo {
   width: 220px;
   vertical-align: middle;
+}
+.login_block a {
+  color: #111111;
+  text-decoration: none;
+  border-radius: 10px;
+  display: block;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Projects from "./Projects";
-import { addProjectCreator, deleteProjectCreator, setProjectCreator, changeProjectCreator } from "./../../redux/projectReducer";
+import { addProject, deleteProject, setProject, changeProject } from "./../../redux/projectReducer";
 
 let mapStateToProps = (state) => {
   return {
@@ -12,23 +12,23 @@ let mapStateToProps = (state) => {
     newProjectPhoto: state.projectPage.newProjectPhoto,
   }
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    addProject: () => {
-      dispatch(addProjectCreator());
-    },
-    deleteProject: (projectID) => {
-      dispatch(deleteProjectCreator(projectID));
-    },
-    changeProject: (title, description, url, photo) => {
-      dispatch(changeProjectCreator(title, description, url, photo));
-    },
-    setProjectCreator: (projects) => {
-      dispatch(setProjectCreator(projects));
-    }
-  }
-}
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     addProject: () => {
+//       dispatch(addProjectCreator());
+//     },
+//     deleteProject: (projectID) => {
+//       dispatch(deleteProjectCreator(projectID));
+//     },
+//     changeProject: (title, description, url, photo) => {
+//       dispatch(changeProjectCreator(title, description, url, photo));
+//     },
+//     setProjectCreator: (projects) => {
+//       dispatch(setProjectCreator(projects));
+//     }
+//   }
+// }
 
-const ProjectsContainer = connect(mapStateToProps, mapDispatchToProps)(Projects);
+const ProjectsContainer = connect(mapStateToProps, {addProject, deleteProject, changeProject, setProject})(Projects);
 
 export default ProjectsContainer;
